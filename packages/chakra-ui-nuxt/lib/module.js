@@ -19,8 +19,8 @@ module.exports = function (moduleOptions) {
 
   // Resolve icons
   let packIcons = {}
-  if (options.icons && options.icons.iconPack) {
-    packIcons = parsePackIcons(options.icons.iconPack, options.icons.iconSet)
+  if (options.icons) {
+    packIcons = parsePackIcons(options.icons.iconSet)
   }
 
   // Transpile lodash-es
@@ -39,7 +39,7 @@ module.exports = function (moduleOptions) {
 
   // Icons
   const icons = {
-    ...internalIcons.default,
+    ...internalIcons,
     ...packIcons,
     ...(options.icons && options.icons.extend)
   }
